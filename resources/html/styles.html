@@ -1,0 +1,32 @@
+/* ---------------- */
+/* This code creates a custom style for quarto.report */
+/* ---------------- */
+
+
+/* ----- Setting up CSS variables ----- */
+/* this avoid to repeat each Pandoc statement to pass to multiples CSS statements */
+
+:root{
+
+    --header-font: $if(style.font.header)$$style.font.header$$else$sans$endif$;
+    --main-font: $if(style.font.main)$$style.font.main$$else$serif$endif$;
+    --mono-font: $if(style.font.mono)$$style.font.mono$$else$mono$endif$;
+    --base_size: $if(style.font.size)$$style.font.size$$else$12pt$endif$;
+
+    --accent-font-color: $if(style.color.font-accent)$$style.color.font-accent$$else$#fdfdfd$endif$;
+    --accent-color: $if(style.color.accent)$$style.color.accent$$else$coral$endif$;
+    --font-color: $if(style.color.font)$$style.color.font$$else$black$endif$;
+    --third-color: $if(style.color.third)$$style.color.third$$else$coral$endif$;
+
+    --logo: $if(style.logo)$$style.logo$$endif$;
+    --main-img: $if(style.main-img)$$style.main-img$$endif$; 
+
+    --pagesize-width: $if(style.pagesize.width)$$style.pagesize.width$$else$210mm$endif$;
+    --pagesize-height: $if(style.pagesize.height)$$style.pagesize.height$$else$297mm$endif$;
+}
+
+
+/* ----- Adding external theme  ----- */
+$if(style.theme.typewriter)$
+    $../css/typewriter.css()$
+$endif$

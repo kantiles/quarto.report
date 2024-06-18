@@ -1,6 +1,6 @@
 ---
-title: "Title of the report"
-subtitle: "Subtitle of the report"
+title: "This is a fantastic title for a report I want to show to everybody"
+subtitle: "Did I ever tell you how this one was nice ? Maybe not ?"
 author: Thomas Vroylandt
 date: last-modified
 execute: 
@@ -8,28 +8,91 @@ execute:
   warning: false
 format:
     pdf:
-        toc: false
+        toc: true
         minimal: true
         template: "resources/html/template.html"
-        css: "resources/css/weasy.css"
         pdf-engine: weasyprint
+
+style:
+  theme: 
+    typewriter: true
+  font:
+    header: "Outfit"
+    main: "Montserrat"
+    mono: "Fira Code"
+    size: 12pt
+  color:
+    font: "#404040"
+    font-accent: "#fdfdfd"
+    accent: "#e34234"
+    third: "#ABC145"
+  pagesize:
+    width: 8.5in
+    height: 11in
+  logo: url(https://img.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_642953-154.jpg?w=360)
+  main-img: url(resources/img/report-cover.jpg)
 ---
 
+## A really awesome part 1
 
-## This is part 1 {-}
-
-### Second level {-}
+### Second level header
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-## Second level {-}
+```
+print("hello.world") |>
+  some_r_code()
+```
+
+### Another second level header
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 
+- element 1
+- element 2
+- element 3
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+> ### Blockquote title
+>
+> Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+#### Some columns
+
+:::col-wrapper-2-equal
+::::col-1
+Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
+::::
+
+::::col-2
+Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
+::::
+:::
+
+Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
+
+:::col-wrapper-2-right-66
+::::col-1
+Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus.
+::::
+
+::::col-2
+**54% of the people**
+
+**62% of the other people**
+
+**21% of the rest**
+::::
+:::
+
+### Still another one
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
 
@@ -37,24 +100,56 @@ Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maece
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
 
-Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
-
-### Second level {-}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+#### Level 4
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
-
-Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
-
-## And now part 2 {-}
+## And now part 2
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
 
+1. element
+2. element
+3. element
 
-### Second level {-}
+### Second level - once again
+
+#### Level 4 which really is awesome
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
 
+#### Level 4, again !
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+:::inverse-page
+
+## Header 2, once again
+
+### Second level, haven't I mentioned it before ?
+
+#### Level 4, oops
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+#### Level 4, again ???
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+### Second level again and again
+
+#### Level 4, seems like there is some identical headers here
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+:::
+
+## Some more text because I don't know what to write
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+
+### Second level again and again and again
+
+#### Level 4, the nicest on Earth
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
