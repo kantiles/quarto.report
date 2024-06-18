@@ -11,6 +11,7 @@ format:
         toc: false
         minimal: true
         template: "resources/html/template.html"
+        css: "resources/css/weasy.css"
         pdf-engine: weasyprint
 ---
 
