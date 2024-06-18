@@ -14,7 +14,14 @@ format:
         minimal: true
         template: "resources/html/template.html"
         pdf-engine: weasyprint
+
+always_allow_html: yes
 ---
+
+```{r setup}
+knitr::opts_knit$set('rmarkdown.pandoc.to' = 'html')
+```
+
 
 ## A really awesome part 1
 
@@ -50,17 +57,64 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est
 >
 > Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. 
+
+### Tables
+
+#### With `kable`
+
+```{r}
+mtcars |>
+  head(5) |>
+  knitr::kable()
+```
+
+#### With `flextable`
+
+You have to add `always_allow_html: yes` in the YAML (strange it's supposed to be `prefer-html: true`).
+```{r}
+# see https://github.com/quarto-dev/quarto-cli/issues/8717
+mtcars |>
+  head(5) |>
+  flextable::flextable()
+```
+
+#### With `gt`
+
+You have to remove the default CSS, which isn't fully supported by `weasyprint` to apply a new one.
+```{r}
+# see https://github.com/rstudio/gt/issues/816
+remove_css <- function(x) {
+  x <- gsub("<style>.*</style>", "", x)
+  htmltools::HTML(x)
+}
+
+mtcars |>
+  head(5) |>
+  gt::gt() |>
+  gt::as_raw_html(inline_css = FALSE) |>
+  remove_css()
+```
 
 #### Some columns
 
-:::col-wrapper-2-equal
+:::col-wrapper-2
 ::::col-1
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 ::::
 
 ::::col-2
-Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
+```{r}
+#| label: airquality_col
+#| out-width: 2.5in
+#| out-height: 3.5in
+#| fig-height: 7
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
+
 ::::
 :::
 
