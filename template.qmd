@@ -14,25 +14,6 @@ format:
         minimal: true
         template: "resources/html/template.html"
         pdf-engine: weasyprint
-
-style:
-  theme: 
-    typewriter: true
-  font:
-    header: "Outfit"
-    main: "Montserrat"
-    mono: "Fira Code"
-    size: 12pt
-  color:
-    font: "#404040"
-    font-accent: "#fdfdfd"
-    accent: "#e34234"
-    third: "#ABC145"
-  pagesize:
-    width: 8.5in
-    height: 11in
-  logo: url(https://img.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_642953-154.jpg?w=360)
-  main-img: url(resources/img/report-cover.jpg)
 ---
 
 ## A really awesome part 1
