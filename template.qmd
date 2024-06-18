@@ -6,6 +6,8 @@ date: last-modified
 execute: 
   echo: false
   warning: false
+  fig-format: 'svglite'
+  
 format:
     pdf:
         toc: true
@@ -41,14 +43,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-```
-print("hello.world") |>
-  some_r_code()
-```
-
 ### Another second level header
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit. Praesent tellus lectus, pulvinar non luctus non, faucibus id diam. Ut condimentum, ante nec lobortis hendrerit, eros nunc gravida ante, id sodales ligula elit ut odio. Vestibulum imperdiet arcu quis massa facilisis, et sollicitudin urna porttitor. Praesent laoreet velit ac sagittis efficitur. Sed sit amet porttitor ipsum. Aliquam magna leo, efficitur vel laoreet ut, gravida ut ligula.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit.
+```{r}
+#| label: fig-airquality
+#| fig-cap: "Temperature and ozone level."
+
+library(ggplot2)
+
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess")
+```
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 
@@ -78,17 +85,31 @@ Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maece
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
 
-:::col-wrapper-2-right-66
-::::col-1
+:::col-wrapper-2-unequal
+::::col-1-2
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus.
 ::::
 
-::::col-2
+::::col-3
 **54% of the people**
 
 **62% of the other people**
 
 **21% of the rest**
+::::
+:::
+
+:::col-wrapper-2-unequal
+::::col-1
+**54% of the people**
+
+**62% of the other people**
+
+**21% of the rest**
+::::
+
+::::col-2-3
+Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat.
 ::::
 :::
 
