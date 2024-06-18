@@ -285,5 +285,11 @@ h1.title {
 /* ---------- */
 
 img, svg {
-  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+figure{
+  padding: 0;
+  margin: 0;
 }

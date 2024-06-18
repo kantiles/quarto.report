@@ -35,14 +35,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit.
 ```{r}
-#| label: fig-airquality
-#| fig-cap: "Temperature and ozone level."
+#| label: airquality
+#| fig-width: 7
+#| fig-align: "left"
 
 library(ggplot2)
 
 ggplot(airquality, aes(Temp, Ozone)) + 
   geom_point() + 
-  geom_smooth(method = "loess")
+  geom_smooth(method = "loess") +
+  theme_minimal()
 ```
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
@@ -106,13 +108,13 @@ Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maece
 ::::col-2
 ```{r}
 #| label: airquality_col
-#| out-width: 2.5in
-#| out-height: 3.5in
-#| fig-height: 7
+#| fig-height: 3.8
+#| fig-width: 3.2
 
 ggplot(airquality, aes(Temp, Ozone)) + 
   geom_point() + 
-  geom_smooth(method = "loess")
+  geom_smooth(method = "loess") +
+  theme_minimal()
 ```
 
 ::::
