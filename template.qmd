@@ -10,8 +10,8 @@ format:
     pdf:
         toc: false
         minimal: true
+        template: "resources/html/template.html"
         pdf-engine: weasyprint
-        template: resources/html/template.html
 ---
 
 
