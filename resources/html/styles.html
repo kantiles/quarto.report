@@ -29,4 +29,6 @@
 /* ----- Adding external theme  ----- */
 $if(report-theme.typewriter)$
     $../css/typewriter.css()$
+$elseif(report-theme.chalk)$
+    $../css/chalk.css()$
 $endif$

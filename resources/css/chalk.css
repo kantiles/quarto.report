@@ -1,0 +1,314 @@
+/* -------------------- */
+/* quarto.report chalk template */
+/* -------------------- */
+
+/* ---------- */
+/* Layout */
+/* ---------- */
+
+@page {
+    size: var(--pagesize-width) var(--pagesize-height);
+  
+    @left-top {
+      background: var(--accent-color);
+      content: "";
+      height: var(--pagesize-height);
+      width: 100%;
+      margin-top: -2cm;
+      z-index: -1;
+    }
+
+    /* counter */
+    @bottom-right {
+      content: counter(page);
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+      border-right: 2px solid var(--accent-color);
+
+      font-weight: bold;
+      
+      height: 1cm;
+      width: 1cm;
+      padding-right: 3%;
+      margin-bottom: 10.2%;
+      margin-right: -5.9%;
+    }
+
+    @bottom-right-corner {
+      content: "";
+      border-top:  2px solid var(--accent-color);
+      border-left:  2px solid var(--accent-color);
+      margin-top: 50%;
+      margin-left: 50%;
+    }
+
+
+    padding-left: 2%;
+  }
+  
+  /* ---------- */
+  /* Main style */
+  /* ---------- */
+  
+  /* Headers */
+  h1,
+  h2,
+  h3,
+  h4,
+  .subtitle,
+  .date,
+  .author {
+    font-family: var(--header-font);
+  }
+  
+  h1{
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  
+  h2 {
+    color: var(--accent-font-color);
+    font-size: 2em;
+    string-set: heading content();
+    margin-left: -10%;
+    margin-right: 10%;
+    padding: 2% 5% 2% 5%;
+    position: relative;
+    background-color: var(--third-color);
+  }
+
+  h3 {
+    color: var(--third-color);
+    font-size: 1.6em;
+  }
+  h4 {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+  
+  /* Text & others */
+  html {
+    color: var(--font-color);
+    font-family: var(--main-font);
+    font-size: var(--base-size);
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  
+  /* Blockquote style */
+  blockquote {
+    background: var(--third-color);
+    margin: 0 0;
+    padding: 2%;
+    width: 100%;
+    color: var(--accent-font-color);
+  }
+  
+  blockquote * {
+    color: var(--accent-font-color) !important;
+  }
+  
+  /* Code blocks */
+  pre {
+    margin-bottom: -1em;
+    background-color: #edededd1;
+    padding: 1em;
+    overflow: auto;
+  }
+  
+  code {
+    font-family: var(--mono-font) !important;
+    padding: 0;
+    overflow: visible;
+    overflow-wrap: normal;
+  }
+  
+  /* ---------- */
+  /* Title page */
+  /* ---------- */
+  
+  /* first page margins */
+ @page:first{
+  @bottom-right {
+    content: none;
+  }
+
+  @bottom-right-corner {
+    content: none;
+  }
+ }
+ 
+  /* title element */
+  h1.title {
+    width: 100%;
+    font-size: 3.5em;
+    padding-top: 7%;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+  
+  /* cover page block */
+  #title-block-header {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    height: var(--pagesize-height);
+  }
+  
+  /* ---------- */
+  /* block at the bottom of the cover page */
+  #title-block-subheader {
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-size: 3cm;
+    background-position: 90% 30%;
+    background-color: var(--third-color);
+  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  
+    flex: 1;
+    margin-left: -10%;
+    margin-right: 5%;
+    margin-bottom: 30%;
+    padding-left: 4%;
+    padding-right: 25%;
+    padding-top: 4%;
+    padding-bottom: 15%;
+  
+    page-break-after: always;
+  }
+  
+  #subtitle {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  #date-author {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .subtitle,
+  .date,
+  .author {
+    color: var(--accent-font-color);
+    font-size: 1.2em;
+  }
+  
+  /* ---------- */
+  /* Inverse page */
+  /* ---------- */
+  .inverse-page {
+    page-break-after: always;
+    page-break-after: always;
+    page: inverse;
+  
+    color: var(--accent-font-color);
+  }
+  
+  .inverse-page * {
+    color: var(--accent-font-color) !important;
+  }
+  
+  @page inverse {
+    background: var(--accent-color);
+  
+    @top-left {
+      background: var(--accent-font-color);
+      color: var(--accent-color) !important;
+    }
+    @top-center {
+      background: var(--accent-font-color);
+      color: var(--accent-color) !important;
+    }
+    @top-right {
+      color: var(--accent-font-color) !important;
+    }
+  }
+  
+  /* ---------- */
+  /* TOC */
+  /* ---------- */
+  #TOC {
+    page-break-after: always;
+  }
+  
+  #TOC ul {
+    list-style: square;
+  }
+  
+  #TOC ul li::marker {
+    color: var(--accent-color);
+  }
+  
+  #TOC ul li {
+    border-top: 0.25pt solid #c1c1c1;
+    margin: 0.2em 0;
+    padding-top: 0.2em;
+  }
+  
+  #TOC ul li a {
+    color: inherit;
+    text-decoration-line: inherit;
+  }
+  
+  #TOC ul li a::after {
+    color: var(--accent-color);
+    content: target-counter(attr(href), page);
+    float: right;
+  }
+  
+  /* ---------- */
+  /* Columns */
+  /* ---------- */
+  
+  /* wrapper */
+  .col-wrapper-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .col-wrapper-2-unequal {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  /* content */
+  .col-1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .col-2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .col-3 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .col-1-2 {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+  .col-2-3 {
+    grid-column: 2/4;
+    grid-row: 1;
+  }
+  
+  /* ---------- */
+  /* img */
+  /* ---------- */
+  
+  img, svg {
+    padding: 0;
+    margin: 0;
+  }
+  
+  figure{
+    padding: 0;
+    margin: 0;
+  }

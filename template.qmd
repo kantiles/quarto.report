@@ -17,7 +17,7 @@ format:
         pdf-engine: weasyprint
 
 report-theme: 
-  typewriter: true
+  chalk: true
 
 always_allow_html: yes
 ---
