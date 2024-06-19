@@ -37,7 +37,7 @@
     margin-bottom: -2cm;
     /*border-radius: 60% 0 0 0  / 40% 0 0 0;*/
   }
-  
+
   @bottom-right {
     background: var(--accent-color);
     content: string(heading);
@@ -50,7 +50,7 @@
     /*border-radius: 40% 0 0 0  / 60% 0 0 0;*/
   }
 
-  @bottom-left{
+  @bottom-left {
     content: "";
     background-image: var(--logo);
     background-repeat: no-repeat;
@@ -60,8 +60,6 @@
     background-position: 0 0;
   }
 
-
-  
   padding: 3% 2% 3% 2%;
   margin: 7% 5% 7% 5%;
 }
@@ -94,7 +92,7 @@ h2 {
 }
 
 h3 {
-  color: var(--third-color);
+  color: var(--accent-color);
   font-size: 1.6em;
 }
 h4 {
@@ -113,7 +111,7 @@ html {
 
 /* Blockquote style */
 blockquote {
-  background: var(--third-color);
+  background: var(--accent-color);
   margin: 0 0;
   padding: 2%;
   width: 100%;
@@ -154,7 +152,7 @@ h1.title {
 /* ---------- */
 /* block at the bottom of the cover page */
 #title-block-subheader {
-    display: none;
+  display: none;
 }
 
 /* ---------- */
@@ -209,4 +207,42 @@ svg {
 figure {
   padding: 0;
   margin: 0;
+}
+
+/* ---------- */
+/* named page with third color */
+/* --> mimic this one if you want custom named page */
+/* ---------- */
+
+.third-page {
+  page-break-after: always;
+  page-break-after: always;
+  page: third;
+}
+
+.third-page h2, 
+.third-page h3, 
+.third-page h4 {
+  color: var(--third-color) !important;
+}
+
+.third-page blockquote{
+    background-color: var(--third-color) !important;
+}
+
+@page third {
+    @left-top {
+        background: var(--third-color);
+      }
+      @top-left {
+        background: var(--third-color);
+      }
+    
+      @right-bottom {
+        background: var(--third-color);
+      }
+    
+      @bottom-right {
+        background: var(--third-color);
+      }
 }
