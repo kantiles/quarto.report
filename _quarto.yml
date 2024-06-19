@@ -1,6 +1,4 @@
 style:
-  theme: 
-    typewriter: true
   font:
     header: "Outfit"
     main: "Montserrat"
