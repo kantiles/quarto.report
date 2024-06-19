@@ -11,13 +11,13 @@ execute:
   
 format:
     pdf:
-        toc: true
+        toc: false
         minimal: true
         template: "resources/html/template.html"
         pdf-engine: weasyprint
 
 report-theme: 
-  chalk: true
+  corner: true
 
 always_allow_html: yes
 ---
