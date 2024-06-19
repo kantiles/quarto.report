@@ -15,14 +15,18 @@
     height: 70%;
     width: 100%;
     margin-top: -2cm;
-    border-radius: 0 0 60% 0  / 0 0 40% 0;
+    /*border-radius: 0 0 60% 0  / 0 0 40% 0;*/
   }
   @top-left {
     background: var(--accent-color);
-    content: "Some text";
+    content: string(title);
+    text-align: left;
+    color: var(--accent-font-color);
+    font-weight: bold;
+    text-transform: uppercase;
     height: 100%;
     width: 40%;
-    border-radius: 0 0 40% 0 / 0 0 60% 0;
+    /*border-radius: 0 0 40% 0 / 0 0 60% 0;*/
   }
 
   @right-bottom {
@@ -31,15 +35,19 @@
     height: 70%;
     width: 100%;
     margin-bottom: -2cm;
-    border-radius: 60% 0 0 0  / 40% 0 0 0;
+    /*border-radius: 60% 0 0 0  / 40% 0 0 0;*/
   }
   
   @bottom-right {
     background: var(--accent-color);
-    content: "section text";
+    content: string(heading);
+    text-align: left;
+    color: var(--accent-font-color);
+    font-weight: bold;
     height: 100%;
     width: 40%;
-    border-radius: 40% 0 0 0  / 60% 0 0 0;
+    padding-left: 2%;
+    /*border-radius: 40% 0 0 0  / 60% 0 0 0;*/
   }
 
   @bottom-left{
@@ -52,9 +60,9 @@
     background-position: 0 0;
   }
 
-  padding-left: 2%;
-  padding-right: 2%;
 
+  
+  padding: 3% 2% 3% 2%;
   margin: 7% 5% 7% 5%;
 }
 
@@ -76,6 +84,7 @@ h4,
 h1 {
   color: var(--accent-color);
   font-weight: bold;
+  string-set: title content();
 }
 
 h2 {
@@ -140,7 +149,6 @@ code {
 h1.title {
   width: 100%;
   font-size: 2.5em;
-  padding-top: 5%;
 }
 
 /* ---------- */
