@@ -7,7 +7,10 @@ date: last-modified
 jupyter: python3
 
 execute:
+  echo: false
   fig-format: "svg"
+  fig-width: 2
+  fig-height: 2
 
 format:
     quarto.report-pdf+typewriter
