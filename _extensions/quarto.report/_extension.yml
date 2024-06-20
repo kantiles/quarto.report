@@ -1,0 +1,28 @@
+title: quarto.report
+author: Thomas Vroylandt
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  format:
+    common:
+      pdf-engine: weasyprint
+      minimal: true
+      template: "html/template.html" 
+  
+    pdf+typewriter:
+      css: "css/typewriter.css"
+      toc: true
+      
+    pdf+chalk:
+      css: "css/chalk.css"
+      toc: true
+
+    pdf+corner:
+      css: "css/corner.css"
+      toc: false
+
+    execute: 
+      echo: false
+      warning: false
+      fig-format: 'svg'
+    

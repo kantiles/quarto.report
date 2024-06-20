@@ -13,4 +13,4 @@ style:
     width: 210mm
     height: 297mm
   logo: url(https://img.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_642953-154.jpg?w=360)
-  main-img: url(resources/img/report-cover.jpg)
+  main-img: url(../../../report-cover.jpg)

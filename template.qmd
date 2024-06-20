@@ -5,21 +5,13 @@ author: Thomas Vroylandt
 date: last-modified
 
 execute: 
-  echo: false
-  warning: false
   fig-format: 'svglite'
   
 format:
-    pdf:
-        toc: false
-        minimal: true
-        template: "resources/html/template.html"
-        pdf-engine: weasyprint
-
-report-theme: 
-  typewriter: true
+    quarto.report-pdf+chalk
 
 always_allow_html: yes
+prefer-html: true
 ---
 
 ```{r setup}

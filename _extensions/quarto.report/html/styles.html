@@ -24,13 +24,3 @@
     --pagesize-width: $if(style.pagesize.width)$$style.pagesize.width$$else$210mm$endif$;
     --pagesize-height: $if(style.pagesize.height)$$style.pagesize.height$$else$297mm$endif$;
 }
-
-
-/* ----- Adding external theme  ----- */
-$if(report-theme.typewriter)$
-    $../css/typewriter.css()$
-$elseif(report-theme.chalk)$
-    $../css/chalk.css()$
-$elseif(report-theme.corner)$
-    $../css/corner.css()$
-$endif$
