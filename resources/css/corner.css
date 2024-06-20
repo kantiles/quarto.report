@@ -14,7 +14,7 @@
     content: "";
     height: 70%;
     width: 100%;
-    margin-top: -2cm;
+    margin-top: -3cm;
     /*border-radius: 0 0 60% 0  / 0 0 40% 0;*/
   }
   @top-left {
@@ -34,7 +34,7 @@
     content: "";
     height: 70%;
     width: 100%;
-    margin-bottom: -2cm;
+    margin-bottom: -3cm;
     /*border-radius: 60% 0 0 0  / 40% 0 0 0;*/
   }
 

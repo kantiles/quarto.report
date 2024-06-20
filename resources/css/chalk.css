@@ -22,26 +22,16 @@
     @bottom-right {
       content: counter(page);
       color: var(--accent-color);
-      border-bottom: 2px solid var(--accent-color);
-      border-right: 2px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
 
       font-weight: bold;
       
       height: 1cm;
       width: 1cm;
-      padding-right: 3%;
-      margin-bottom: 10.2%;
-      margin-right: -5.9%;
+      margin-bottom: 10%;
+      margin-right: -6%;
+      text-align: center;
     }
-
-    @bottom-right-corner {
-      content: "";
-      border-top:  2px solid var(--accent-color);
-      border-left:  2px solid var(--accent-color);
-      margin-top: 50%;
-      margin-left: 50%;
-    }
-
 
     padding-left: 2%;
   }

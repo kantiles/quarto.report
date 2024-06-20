@@ -17,7 +17,7 @@ format:
         pdf-engine: weasyprint
 
 report-theme: 
-  corner: true
+  typewriter: true
 
 always_allow_html: yes
 ---
