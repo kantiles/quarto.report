@@ -6,6 +6,7 @@ date: last-modified
 
 execute: 
   fig-format: 'svglite'
+  echo: false
   
 format:
     quarto.report-pdf+chalk

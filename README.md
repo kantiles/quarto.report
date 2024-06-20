@@ -1,12 +1,28 @@
 # quarto.report
 
-## What ?
+`quarto.report` is a Quarto extension that facilitate the creation of well-designed PDF reports with Quarto. It's the heir of `pagedreport`, an [R package](https://pagedreport.rfortherestofus.com/) based on `pagedown` that was hard to maintain due to the initial design choices. `quarto.report` relies on CSS and [`weasyprint`](https://weasyprint.org/) to produced an high-quality output.
 
-A set of customizable templates for printed PDF in QUarto
+It contains three templates designed for prints. Elements like logo, colors, fonts or size can be customized through parameters in the YAML header.
 
-MOCKUP
+> Since it's Quarto, your code chunks can be R, Python or Julia. Pick your best choice !
 
-Child of pagedreport in R that was harder to maintain
+### Chalk
+
+`chalk` is a dual-tone template with both an accent and a third color.
+
+CHALK MOCKUP
+
+### Typewriter
+
+This report is heavily inspied by the [report sample](https://github.com/CourtBouillon/weasyprint-samples/raw/master/report/report.pdf) of Weasyprint. `typewriter` has a main image on first page and use a single accent color. Its best uses are for corporate reports but it can also be use in a parametrized context.
+
+TYPEWRITER MOCKUP
+
+### Corner
+
+`corner` template has been designed to be used in a parametrieed context. It's well suited to produce hundreds of different reports.
+
+CORNER MOCKUP
 
 ## How-to
 
@@ -77,7 +93,7 @@ style:
   main-img: url(path_to_img)
   ```
 
-- `font` change the main font parameters like header font, main font or font for code (mono) or base size
+- `font` change the main font parameters like header font, main font or font for code (mono) or base size. You must have the fonts on your system or add a call to add them in an additional CSS file
 - `color` change the mains colors. Either font color, or the color used when the background color is set on `accent` (`font-accent`)
 - `pagesize` change the dimensions of the page. Can be use to setup the dimensions to landscape if needed.
 - `logo` and `main-img` change the logo and the main background image (for `typewriter` only)
@@ -85,6 +101,12 @@ style:
 ### Render
 
 Render and enjoy the result !
+
+## Programming languages
+
+### Using R
+
+### Using Python
 
 ## Examples in the wild
 

@@ -8,6 +8,7 @@ contributes:
       pdf-engine: weasyprint
       minimal: true
       template: "html/template.html" 
+      embed_resources: true
   
     pdf+typewriter:
       css: "css/typewriter.css"
