@@ -4,22 +4,18 @@ subtitle: "Did I ever tell you how this one was nice ? Maybe not ?"
 author: Thomas Vroylandt
 date: last-modified
 
-jupyter: python3
-
-execute:
+execute: 
   echo: false
-  fig-format: "svg"
-  fig-width: 2
-  fig-height: 2
-
+  warning: false
+  
 format:
-    quarto.report-pdf+corner
+    html:
+      css: "_extensions/quarto.report/css/typewriter.css"
+      minimal: true
+      template-partials: 
+        - "_extensions/quarto.report/html/styles.html"
+        - "_extensions/quarto.report/html/title-block.html"
 ---
-
-```{r setup}
-knitr::opts_knit$set('rmarkdown.pandoc.to' = 'html')
-```
-
 
 ## A really awesome part 1
 
@@ -32,25 +28,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ### Another second level header
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est, non accumsan urna maximus id. Quisque sit amet posuere ex, vel porttitor velit.
+```{r}
+#| label: airquality
+#| fig-width: 7
+#| fig-align: "left"
 
+library(ggplot2)
 
-```{python}
-#| label: airquality_col
-
-# Some sizing issues, see https://quarto.org/docs/computations/execution-options.html#:~:text=QUARTO_FIG_HEIGHT%20environment%20variables.-,Caution,-When%20using%20the
-
-from plotnine import ggplot, geom_point, aes, stat_smooth, facet_wrap, theme
-from plotnine.data import mtcars
-
-p = (
-    ggplot(mtcars, aes("wt", "mpg", color="factor(gear)"))
-    + geom_point()
-    + stat_smooth(method="lm")
-    + facet_wrap("gear")
-)
-
-# set size here - see https://stackoverflow.com/questions/78445464/how-to-control-size-of-images-in-quarto-html-report
-p + theme(figure_size=(3, 2))
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") +
+  theme_minimal()
 ```
 
 Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maecenas pharetra tincidunt leo vel interdum. Nunc id rhoncus lorem, blandit consequat lacus. Morbi eu ex ac dui bibendum congue. Nam vel leo ullamcorper, rhoncus orci non, feugiat mi. Quisque eget bibendum risus. Cras mollis varius enim eu aliquet. Vivamus ac risus varius, maximus arcu nec, posuere nisi. Integer neque tellus, sagittis eu nisi id, porttitor luctus mi. Vestibulum scelerisque quis nisl ut pharetra.
@@ -69,28 +57,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit dolor est
 
 ### Tables
 
-#### With `great_tables`
+#### With `kable`
 
-```{python}
-from great_tables import GT
-from great_tables.data import sp500
+```{r}
+mtcars |>
+  head(5) |>
+  knitr::kable()
+```
 
-# Define the start and end dates for the data range
-start_date = "2010-06-07"
-end_date = "2010-06-14"
+#### With `flextable`
 
-# Filter sp500 using Pandas to dates between `start_date` and `end_date`
-sp500_mini = sp500[(sp500["date"] >= start_date) & (sp500["date"] <= end_date)]
+You have to add `always_allow_html: yes` in the YAML (strange it's supposed to be `prefer-html: true`).
+```{r}
+# see https://github.com/quarto-dev/quarto-cli/issues/8717
+mtcars |>
+  head(5) |>
+  flextable::flextable()
+```
 
-# Create a gt table based on the `sp500_mini` table data
-(
-    GT(sp500_mini)
-    .tab_header(title="S&P 500", subtitle=f"{start_date} to {end_date}")
-    .fmt_currency(columns=["open", "high", "low", "close"])
-    .fmt_date(columns="date", date_style="wd_m_day_year")
-    .fmt_number(columns="volume", compact=True)
-    .cols_hide(columns="adj_close")
-)
+#### With `gt`
+
+You have to remove the default CSS, which isn't fully supported by `weasyprint` to apply a new one.
+```{r}
+mtcars |>
+  head(5) |>
+  gt::gt() |>
+  gt::as_raw_html(inline_css = FALSE)
 ```
 
 #### Some columns
@@ -101,23 +93,15 @@ Phasellus gravida metus at finibus congue. Cras placerat vehicula feugiat. Maece
 ::::
 
 ::::col-2
+```{r}
+#| label: airquality_col
+#| fig-height: 3.8
+#| fig-width: 3.2
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") +
+  theme_minimal()
 ```
 
 ::::
