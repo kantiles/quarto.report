@@ -5,31 +5,45 @@ quarto-required: ">=1.4.0"
 contributes:
   format:
     common:
-      minimal: true
-      template: "html/template.html" 
+      minimal: true 
       embed_resources: true
   
     pdf+typewriter:
       pdf-engine: weasyprint
+      template: "html/template.html"
       css: "css/typewriter.css"
       toc: true
       
     pdf+chalk:
       pdf-engine: weasyprint
+      template: "html/template.html"
       css: "css/chalk.css"
       toc: true
 
     pdf+corner:
       pdf-engine: weasyprint
+      template: "html/template.html"
       css: "css/corner.css"
       toc: false
 
     html+typewriter:
       css: "css/typewriter.css"
       toc: true
+      template-partials: 
+        - "html/styles.html"
+        - "html/title-block.html"
 
-    execute: 
-      echo: false
-      warning: false
-      fig-format: 'svg'
+    html+chalk:
+      css: "css/chalk.css"
+      toc: true
+      template-partials: 
+        - "html/styles.html"
+        - "html/title-block.html"
+
+    html+corner:
+      css: "css/corner.css"
+      toc: true
+      template-partials: 
+        - "html/styles.html"
+        - "html/title-block.html"
     

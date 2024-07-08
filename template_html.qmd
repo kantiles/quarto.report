@@ -10,12 +10,7 @@ execute:
   fig-format: "svglite"
   
 format:
-    html:
-      css: "_extensions/quarto.report/css/typewriter.css"
-      minimal: true
-      template-partials: 
-        - "_extensions/quarto.report/html/styles.html"
-        - "_extensions/quarto.report/html/title-block.html"
+    quarto.report-html+typewriter
 ---
 
 ## A really awesome part 1
