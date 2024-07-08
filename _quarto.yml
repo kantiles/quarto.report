@@ -7,8 +7,8 @@ style:
   color:
     font: "#404040"
     font-accent: "#fdfdfd"
-    accent: "#123456"
-    third: "#987654"
+    accent: "#D93930"
+    third: "#008A71"
   pagesize:
     width: 210mm
     height: 297mm
